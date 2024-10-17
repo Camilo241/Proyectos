@@ -10,6 +10,9 @@ public class ListadeTarea {
     }
     
     public void TraerTarea(){
+        for (int i = 0; i < listaTareas.size(); i++) {
+            System.out.println(listaTareas.get(i));
+        }
 
     }
 
@@ -18,6 +21,6 @@ public class ListadeTarea {
     }
 
     public void Eliminar(){
-        
+
     }
 }
