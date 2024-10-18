@@ -1,7 +1,7 @@
 package ListaTareas;
 
 import java.util.ArrayList;
-import java.util.List;
+
 import java.util.Scanner;
 
 public class Main {
@@ -10,7 +10,7 @@ public class Main {
         ArrayList<Tarea> lista = new ArrayList<>();
         ListadeTarea listadeTarea = new ListadeTarea(lista);
         
-        int opcion = sc.nextInt();
+        int opcion = 0;
         while (opcion != 5) {
             System.out.println("¿Qué desea hacer?");
             System.out.println("1. Agregar Tarea");
@@ -18,6 +18,8 @@ public class Main {
             System.out.println("3. Actualizar Tarea");
             System.out.println("4. Eliminar Tarea");
             System.out.println("5. Finalizar Programa");
+            
+            opcion = sc.nextInt(); 
             switch (opcion) {
                 case 1:
                     System.out.print("Ingresa el ID de la tarea: ");
@@ -39,22 +41,33 @@ public class Main {
                     break;
                 case 3:
                     System.out.print("Ingresa el índice de la tarea a actualizar: ");
-                    int indice = sc.nextInt() - 1;  // Restar 1 para que coincida con el índice de ArrayList
-                    sc.nextLine();  // Consumir el salto de línea
-                    System.out.print("Ingresa el nuevo nombre de la tarea: ");
-                    String nuevoNombre = sc.nextLine();
-                    System.out.print("Ingresa la nueva descripción de la tarea: ");
-                    String nuevaDescripcion = sc.nextLine();
-                    System.out.print("Ingresa la nueva categoría de la tarea: ");
-                    String nuevaCategoria = sc.nextLine();
-                    System.out.print("¿Está completada la tarea? (true/false): ");
-                    boolean nuevoCompletado = sc.nextBoolean();
-                    listadeTarea.Actualizar(tarea,indice);
+                    int indice = sc.nextInt() - 1;
+                    if (indice <= 0 && indice < lista.size()) {
+                        System.out.println("Ingrese el nuevo id de la Tarea");
+                        int nuevoId = sc.nextInt();
+                        sc.nextLine();
+                        System.out.print("Ingresa el nuevo nombre de la tarea: ");
+                        String nuevoNombre = sc.nextLine();
+                        System.out.print("Ingresa la nueva descripción de la tarea: ");
+                        String nuevaDescripcion = sc.nextLine();
+                        System.out.print("Ingresa la nueva categoría de la tarea: ");
+                        String nuevaCategoria = sc.nextLine();
+                        System.out.print("¿Está completada la tarea? (true/false): ");
+                        boolean nuevoCompletado = sc.nextBoolean();
+                        listadeTarea.Actualizar(nuevoId,nuevoNombre,nuevaDescripcion,nuevaCategoria,nuevoCompletado,indice);
+                    } else {
+                        System.out.println("Ingrese un Indice Valido.");
+                    }    
+                
+
+                    
+                    
                     break;
                 case 4:
                     System.out.print("Ingresa el índice de la tarea a eliminar: ");
                     int indiceEliminar = sc.nextInt() - 1;  // Restar 1 para que coincida con el índice de ArrayList
                     listadeTarea.Eliminar(indiceEliminar);
+                    break;
                 case 5:
                     System.out.println("Muchas Gracias");
                     break;
