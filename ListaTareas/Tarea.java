@@ -14,6 +14,10 @@ public class Tarea{
         Categoria = categoria;
         Completado = completado;
     }
+
+    public String toString(){
+        return "ID: " + id + ", Nombre: " + Nombre + ", Descripcion: " + Descripcion + ", Categoria: " + Categoria + ", Estado de la Tarea: " + Completado;
+    }
     
     public int getId() {
         return id;
