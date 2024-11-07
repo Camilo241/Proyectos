@@ -55,6 +55,6 @@ public class Libro {
 
     @Override
     public String toString() {
-        return "Libro{" + "Codigo=" + Codigo + ", Titulo=" + Nombre + ", Autor=" + Autor + ", Genero=" + Genero + ", Disponibilidad=" + Disponibilidad + '}';
+        return "Libro {" + "Codigo= " + Codigo + ", Titulo= " + Nombre + ", Autor= " + Autor + ", Genero= " + Genero + ", Disponibilidad= " + Disponibilidad + '}';
     }
 }
