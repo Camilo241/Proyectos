@@ -4,8 +4,7 @@ import java.util.Scanner;
 class Libros {
     private static ArrayList<Libro> libros = new ArrayList<>();
 
-    public static void CrearLibro() {
-        Scanner sc = new Scanner(System.in);
+    public static void CrearLibro(Scanner sc) {
         System.out.println("Ingrese el Codigo del Libro.");
         int Codigo = sc.nextInt();
         for (int i = 0; i < libros.size(); i++) {
@@ -25,11 +24,9 @@ class Libros {
                 System.out.println("Ya existe un Libro con ese Codigo.");
             }
         }
-        sc.close();
     }
 
-    public static void ActualizarLibro() {
-        Scanner sc = new Scanner(System.in);
+    public static void ActualizarLibro(Scanner sc) {
         System.out.println("Ingrese el Codigo a Buscar.");
         int Codigo = sc.nextInt();
         for (int i = 0; i < libros.size(); i++) {
@@ -51,11 +48,9 @@ class Libros {
                 System.out.println("Libro No Encontrado");
             }
         }
-        sc.close();
     }
 
-    public static void EliminarLibro() {
-        Scanner sc = new Scanner(System.in);
+    public static void EliminarLibro(Scanner sc) {
         System.out.println("Ingrese el Codigo a Buscar.");
         int Codigo = sc.nextInt();
         for (int i = 0; i < libros.size(); i++) {
@@ -77,7 +72,7 @@ class Libros {
                 System.out.println("Libro No Encontrado");
             }
         }
-        sc.close();
+
     }
 
     public static void ImprimirLibro() {
@@ -86,8 +81,7 @@ class Libros {
         }
     }
 
-    public static void BuscarLibro() {
-        Scanner sc = new Scanner(System.in);
+    public static void BuscarLibro(Scanner sc) {
         System.out.println("Ingrese el Codigo del libro a buscar.");
         int Codigo = sc.nextInt();
         for (int i = 0; i < libros.size(); i++) {
@@ -97,7 +91,7 @@ class Libros {
                 System.out.println("Codigo de Libro No Encontrado");
             }
         }
-        sc.close();
+        
     }
 
 }
