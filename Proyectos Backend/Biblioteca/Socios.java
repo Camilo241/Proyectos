@@ -38,7 +38,7 @@ class Socios {
         sc.close();
     }
 
-    public void EliminarSocio() {
+    public static void EliminarSocio() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Ingrese la Identificacion a Eliminar.");
         int identificacion = sc.nextInt();
@@ -52,13 +52,13 @@ class Socios {
         sc.close();
     }
 
-    public void ImprimirSocios() {
+    public static void ImprimirSocios() {
         for (int i = 0; i < socios.size(); i++) {
             System.out.println("Identificacion: " + socios.get(i).getIdentificacion() + " Nombre: " + socios.get(i).getNombre() + " Direccion: " + socios.get(i).getDireccion());
         }
     }
 
-    public void BuscarSocio() {
+    public static void BuscarSocio() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Ingrese la Identificacion a buscar.");
         int identificacion = sc.nextInt();
@@ -72,7 +72,7 @@ class Socios {
         sc.close();
     }
 
-    public void BuscarSocioNoFiable() {
+    public static void BuscarSocioNoFiable() {
     }
 
 }
