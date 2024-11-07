@@ -8,9 +8,8 @@ public class Socio {
 
     }
 
-    public Socio(int identificacion, int librosPrestados, String nombre, String direccion) {
+    public Socio(int identificacion, String nombre, String direccion) {
         Identificacion = identificacion;
-        this.librosPrestados = librosPrestados;
         Nombre = nombre;
         Direccion = direccion;
     }
