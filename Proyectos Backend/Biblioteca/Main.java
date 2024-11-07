@@ -9,12 +9,13 @@ public class Main {
             System.out.println("¿Qué desea hacer?");
             System.out.println("1. Registrar socio\n2. Registrar libro\n3. Registrar prestamo\n4. Ver socios\n5. Ver libros\n6. Ver prestamos\n7. Ver socios no fiables\n8. Salir\nElige:");
             opcion = sc.nextInt();
+            sc.nextLine();
             switch (opcion) {
                 case 1:
-                    Socios.CrearSocio();
+                    Socios.CrearSocio(sc);
                     break;
                 case 2:
-                    Libros.CrearLibro();
+                    Libros.CrearLibro(sc);
                     break;
                 case 3:
                     break;
