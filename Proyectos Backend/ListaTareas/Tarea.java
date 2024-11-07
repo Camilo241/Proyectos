@@ -1,4 +1,4 @@
-package ListaTareas;
+
 public class Tarea{
     private int id;
     private String Nombre;
