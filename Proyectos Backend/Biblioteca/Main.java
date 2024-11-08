@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int opcion = 0;
-        while (opcion != 8) {
+        while (opcion != 14) {
             System.out.println("¿Qué desea hacer?");
             System.out.println(
                     "1. Registrar socio\n2. Registrar libro\n3. Registrar prestamo\n4. Ver socios\n5. Ver libros\n6. Ver prestamos\n7. Ver socios no fiables\n8. Actualizar Socio\n9. Actualizar Libro\n10. Actualizar Prestamo\n11. Eliminar Socio\n12. Eliminar Libro\n13. Eliminar Prestamo\n14. Salir \nElige:");

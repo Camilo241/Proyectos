@@ -25,6 +25,7 @@ class Libros {
     public static void ActualizarLibro(Scanner sc) {
         System.out.println("Ingrese el Codigo a Buscar.");
         int Codigo = sc.nextInt();
+        sc.nextLine();
         for (int i = 0; i < libros.size(); i++) {
             if (libros.get(i).getCodigo() == Codigo) {
                 System.out.println("Ingrese el Nombre del Libro.");
@@ -35,10 +36,10 @@ class Libros {
                 String Genero = sc.nextLine();
                 System.out.println("Ingrese la Disponibildad.");
                 Boolean Disponibilidad = sc.nextBoolean();
-                libros.get(Codigo).setNombre(Nombre);
-                libros.get(Codigo).setAutor(Autor);
-                libros.get(Codigo).setGenero(Genero);
-                libros.get(Codigo).setDisponibilidad(Disponibilidad);
+                libros.get(i).setNombre(Nombre);
+                libros.get(i).setAutor(Autor);
+                libros.get(i).setGenero(Genero);
+                libros.get(i).setDisponibilidad(Disponibilidad);
                 System.out.println("Libro Actualizado");
             } else {
                 System.out.println("Libro No Encontrado");
@@ -51,19 +52,8 @@ class Libros {
         int Codigo = sc.nextInt();
         for (int i = 0; i < libros.size(); i++) {
             if (libros.get(i).getCodigo() == Codigo) {
-                System.out.println("Ingrese el Nombre del Libro.");
-                String Nombre = sc.nextLine();
-                System.out.println("Ingrese el Autor del Libro.");
-                String Autor = sc.nextLine();
-                System.out.println("Ingrese el Genero.");
-                String Genero = sc.nextLine();
-                System.out.println("Ingrese la Disponibildad.");
-                Boolean Disponibilidad = sc.nextBoolean();
-                libros.get(Codigo).setNombre(Nombre);
-                libros.get(Codigo).setAutor(Autor);
-                libros.get(Codigo).setGenero(Genero);
-                libros.get(Codigo).setDisponibilidad(Disponibilidad);
-                System.out.println("Libro Actualizado");
+                libros.remove(i).getCodigo();
+                System.out.println("El libro se ha eliminado");
             } else {
                 System.out.println("Libro No Encontrado");
             }
@@ -72,9 +62,14 @@ class Libros {
     }
 
     public static void ImprimirLibro() {
-        for (int i = 0; i < libros.size(); i++) {
-            System.out.println(libros.toString());
+        if (libros.size() == 0) {
+            System.out.println("Por el Momento no hay libros Disponibles");
+        } else {
+            for (int i = 0; i < libros.size(); i++) {
+                System.out.println(libros.toString());
+            }
         }
+
     }
 
     public static void BuscarLibro(Scanner sc) {

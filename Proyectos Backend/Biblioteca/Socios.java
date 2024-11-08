@@ -21,15 +21,17 @@ class Socios {
     public static void ActualizarSocio(Scanner sc) {
         System.out.println("Ingrese la Identificacion a buscar.");
         int identificacion = sc.nextInt();
+        sc.nextLine();
         for (int i = 0; i < socios.size(); i++) {
             if (socios.get(i).getIdentificacion() == identificacion) {
                 System.out.println("Ingrese su Nombre.");
                 String Nombre = sc.nextLine();
                 System.out.println("Ingrese su Direccion.");
                 String Direccion = sc.nextLine();
-                socios.get(identificacion).setNombre(Nombre);
-                socios.get(identificacion).setDireccion(Direccion);
+                socios.get(i).setNombre(Nombre);
+                socios.get(i).setDireccion(Direccion);
                 System.out.println("Usuario Actualizado");
+                break;
             } else {
                 System.out.println("Usuario No Encontrado");
             }
@@ -43,6 +45,7 @@ class Socios {
         for (int i = 0; i < socios.size(); i++) {
             if (socios.get(i).getIdentificacion() == identificacion) {
                 socios.remove(i).getIdentificacion();
+                System.out.println("El socio ha sido Eliminado");
             } else {
                 System.out.println("Usuario No Encontrado");
             }
@@ -51,8 +54,17 @@ class Socios {
     }
 
     public static void ImprimirSocios() {
-        for (int i = 0; i < socios.size(); i++) {
-            System.out.println("Identificacion: " + socios.get(i).getIdentificacion() + " Nombre: " + socios.get(i).getNombre() + " Direccion: " + socios.get(i).getDireccion());
+        if (socios.size() == 0) {
+            System.out.println("No hay Socios por el Momento");
+        }else{
+            for (int i = 0; i < socios.size(); i++) {
+                System.out.println(socios.size());
+                if (socios.size()>=1) {
+                System.out.println(socios.toString());
+                }else{
+                    
+                }
+            }
         }
     }
 
