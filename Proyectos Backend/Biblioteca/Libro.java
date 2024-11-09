@@ -3,7 +3,7 @@ public class Libro {
 
     private String Nombre,Autor,Genero;
 
-    private Boolean Disponibilidad;
+    private Boolean Disponibilidad = true;
     
     public Libro(int codigo, String nombre, String autor, String genero, Boolean disponibilidad) {
         Codigo = codigo;

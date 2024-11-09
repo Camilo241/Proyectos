@@ -73,7 +73,7 @@ class Socios {
         int identificacion = sc.nextInt();
         for (int i = 0; i < socios.size(); i++) {
             if (socios.get(i).getIdentificacion() == identificacion) {
-                System.out.println("Identificacion: " + socios.get(i).getIdentificacion() + " Nombre: " + socios.get(i).getNombre() + " Direccion: " + socios.get(i).getDireccion());
+                System.out.println(socios.toString());
             } else {
                 System.out.println("Usuario No Encontrado");
             }
@@ -81,7 +81,9 @@ class Socios {
 
     }
 
-    public static void BuscarSocioNoFiable() {
+
+    public static void ImprimirSocioNoFiable() {
+        
     }
 
 }
