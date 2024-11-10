@@ -30,10 +30,10 @@ class Socios {
                 String Direccion = sc.nextLine();
                 socios.get(i).setNombre(Nombre);
                 socios.get(i).setDireccion(Direccion);
-                System.out.println("Usuario Actualizado");
+                System.out.println("Socio Actualizado");
                 break;
             } else {
-                System.out.println("Usuario No Encontrado");
+                System.out.println("Socio No Encontrado");
             }
         }
         
@@ -47,7 +47,7 @@ class Socios {
                 socios.remove(i).getIdentificacion();
                 System.out.println("El socio ha sido Eliminado");
             } else {
-                System.out.println("Usuario No Encontrado");
+                System.out.println("Socio No Encontrado");
             }
         }
 
@@ -57,33 +57,40 @@ class Socios {
         if (socios.size() == 0) {
             System.out.println("No hay Socios por el Momento");
         }else{
+            System.out.println("--Lista de Socios--");
             for (int i = 0; i < socios.size(); i++) {
-                System.out.println(socios.size());
                 if (socios.size()>=1) {
-                System.out.println(socios.toString());
-                }else{
-                    
+                System.out.println("Identificacion: " + socios.get(i).getIdentificacion() + " Nombre: " + socios.get(i).getNombre());
                 }
             }
         }
     }
 
-    public static void BuscarSocio(Scanner sc) {
+    public static Socio BuscarSocio(int Identificacion) {
+        Scanner sc = new Scanner(System.in);
         System.out.println("Ingrese la Identificacion a buscar.");
         int identificacion = sc.nextInt();
-        for (int i = 0; i < socios.size(); i++) {
-            if (socios.get(i).getIdentificacion() == identificacion) {
-                System.out.println(socios.toString());
-            } else {
-                System.out.println("Usuario No Encontrado");
+        for (Socio socio : socios) {
+            if (socio.getIdentificacion() == identificacion) {
+                return socio;
             }
         }
-
+        System.out.println("Socio no encontrado.");
+        return null; // Retorna null si el socio no existe
     }
 
 
+
     public static void ImprimirSocioNoFiable() {
-        
+        System.out.println("--Socios No Fiebles--");
+        for (Socio socio : socios) {
+            if (socio.getLibrosPrestados() > 10) {
+                System.out.println(socio.toString());
+            }else{
+                System.out.println("No hay ningun Socio no Fiable");
+            }
+            
+        }
     }
 
 }

@@ -5,12 +5,11 @@ public class Libro {
 
     private Boolean Disponibilidad = true;
     
-    public Libro(int codigo, String nombre, String autor, String genero, Boolean disponibilidad) {
+    public Libro(int codigo, String nombre, String autor, String genero) {
         Codigo = codigo;
         Nombre = nombre;
         Autor = autor;
         Genero = genero;
-        Disponibilidad = disponibilidad;
     }
 
     public int getCodigo() {

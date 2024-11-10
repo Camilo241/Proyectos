@@ -39,7 +39,7 @@ public class Prestamo{
 
 
     public String getFechaFormateada() {
-        String formato = "yyyy-MM-dd HH:mm:ss";
+        String formato = "yyyy-MM-dd HH:mm";
         DateTimeFormatter formateador = DateTimeFormatter.ofPattern(formato);
         return formateador.format(this.FechaPrestamo);
     }

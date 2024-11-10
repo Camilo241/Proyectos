@@ -26,8 +26,8 @@ public class Socio {
         return librosPrestados;
     }
 
-    public void setLibrosPrestados(int librosPrestados) {
-        this.librosPrestados = librosPrestados;
+    public void incrementarlibrosprestados() {
+        this.librosPrestados++;
     }
 
     public String getNombre() {

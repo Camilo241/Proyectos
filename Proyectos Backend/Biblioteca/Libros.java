@@ -14,9 +14,7 @@ class Libros {
         String Autor = sc.nextLine();
         System.out.println("Ingrese el Genero.");
         String Genero = sc.nextLine();
-        System.out.println("Ingrese la Disponibildad.");
-        Boolean Disponibilidad = sc.nextBoolean();
-        Libro NuevoLibro = new Libro(Codigo, Nombre, Autor, Genero, Disponibilidad);
+        Libro NuevoLibro = new Libro(Codigo, Nombre, Autor, Genero);
         libros.add(NuevoLibro);
         System.out.println("EL Libro ha sido Agregado con Exito");
 
@@ -65,25 +63,26 @@ class Libros {
         if (libros.size() == 0) {
             System.out.println("Por el Momento no hay libros Disponibles");
         } else {
+            System.out.println("--Lista de Libros--");
             for (int i = 0; i < libros.size(); i++) {
-                System.out.println(libros.toString());
+                System.out.println("Codigo del Libro: " + libros.get(i).getCodigo() + ", Titulo del Libro: " + libros.get(i).getNombre() + ", Autor: " + libros.get(i).getAutor() + ", Genero: " + libros.get(i).getGenero() + ", Disponibilidad: " + libros.get(i).getDisponibilidad());
             }
         }
 
     }
 
-    public static void BuscarLibro(Scanner sc) {
+    public static Libro BuscarLibro(int codigoLibro) {
+        Scanner sc = new Scanner(System.in);
         System.out.println("Ingrese el Codigo del libro a buscar.");
         int Codigo = sc.nextInt();
-        for (int i = 0; i < libros.size(); i++) {
-            if (libros.get(i).getCodigo() == Codigo) {
-                System.out.println("Codigo: " + libros.get(i).getCodigo() + " Nombre: " + libros.get(i).getNombre()
-                        + " Autor: " + libros.get(i).getAutor() + " Genero: " + libros.get(i).getGenero()
-                        + " Disponibilidad: " + libros.get(i).getDisponibilidad());
-            } else {
-                System.out.println("Codigo de Libro No Encontrado");
+        for (Libro libro : libros) {
+            if (libro.getCodigo() == Codigo) {
+                return libro;
             }
         }
+        System.out.println("Libro no encontrado.");
+        return null; // Retorna null si el socio no existe
     }
-
 }
+
+
