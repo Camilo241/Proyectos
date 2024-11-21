@@ -19,6 +19,7 @@ public class Caesar {
         System.out.println("La palabra Ingresada fue: " + palabra);
         System.out.println("La palabra con cifrado Cesar4 es: " + resultado);
     }
+    
     public static void Cesar9(String palabra,String alfabeto){
         int desplazamiento = 9;
         StringBuilder resultado = new StringBuilder();
@@ -34,6 +35,6 @@ public class Caesar {
             }
         }
         System.out.println("La palabra Ingresada fue: " + palabra);
-        System.out.println("La palabra con cifrado Cesar4 es: " + resultado);
+        System.out.println("La palabra con cifrado Cesar9 es: " + resultado);
     }
 }

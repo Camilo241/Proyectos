@@ -1,6 +1,6 @@
 package Palindromos;
 
-public class Main {
+public class MainPalindromo {
 
     public static void main(String[] args) {
         Palindromo p = new Palindromo();
