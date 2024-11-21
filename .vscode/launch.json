@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "MainConvertidor",
+            "request": "launch",
+            "mainClass": "MainConvertidor",
+            "projectName": "Proyectos_1b2ff4f9"
+        },
+        {
+            "type": "java",
             "name": "Main",
             "request": "launch",
             "mainClass": "MainCifrado",

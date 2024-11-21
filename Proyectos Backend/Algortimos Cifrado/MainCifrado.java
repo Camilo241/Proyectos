@@ -6,9 +6,9 @@ class MainCifrado {
         System.out.println("Ingrese la palabra a cifrar");
         String palabra = sc.nextLine();
         String alfabeto = "abcdefghijklmnopqrstuvwxyz";
-        //Caesar.Cesar4(palabra, alfabeto);
+        Caesar.Cesar4(palabra, alfabeto);
         Caesar.Cesar9(palabra, alfabeto);
-
+        
         sc.close();
     }
 }
