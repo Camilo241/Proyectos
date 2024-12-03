@@ -1,0 +1,4 @@
+1. Cambiar la disponibilidad de la habitacion cuando se reserve
+2. un manejo de errores cuando exceda la fecha
+3. Hacer suma de los precios que dura la estadia 
+4. permitir modificar la reserva y que se añada la hora en la cual se realizo la actualizacion
