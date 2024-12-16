@@ -16,7 +16,7 @@ public class Tarea{
     }
     @Override
     public String toString(){
-        return "ID: " + id + ", Nombre: " + Nombre + ", Descripcion: " + Descripcion + ", Categoria: " + Categoria + ", Estado de la Tarea: " + Completado;
+        return "ID: " + id + "\nNombre: " + Nombre + "\nDescripcion: " + Descripcion + "\nCategoria: " + Categoria + "\nEstado de la Tarea: " + Completado;
     }
     
     public int getId() {
