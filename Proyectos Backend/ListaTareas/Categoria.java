@@ -1,11 +1,20 @@
 
 
 public class Categoria {
-    private int Id; 
+    private int ID; 
     private String Nombre;
-    
-    public Categoria(String nombre) {
+
+    public Categoria(int id,String nombre) {
+        ID = id;
         Nombre = nombre;
+    }
+
+    public int getId() {
+        return ID;
+    }
+
+    public void setId(int id) {
+        ID = id;
     }
 
     public String getNombre() {
