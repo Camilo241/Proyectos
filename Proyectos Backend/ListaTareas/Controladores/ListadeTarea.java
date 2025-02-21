@@ -1,6 +1,9 @@
+package Controladores;
 
 
 import java.util.ArrayList;
+
+import modelos.Tarea;
 
 public class ListadeTarea {
     ArrayList<Tarea> listaTareas = new ArrayList<>();

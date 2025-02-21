@@ -1,22 +1,24 @@
 
+
 public class Tarea{
     private int id;
     private String Nombre;
     private String Descripcion;
     private String Categoria;
-    private boolean Completado;
+    private boolean Estado;
     
 
-    public Tarea(int id, String nombre, String descripcion, String categoria, boolean completado) {
+    
+    public Tarea(int id, String nombre, String descripcion, String categoria, boolean estado) {
         this.id = id;
         Nombre = nombre;
         Descripcion = descripcion;
         Categoria = categoria;
-        Completado = completado;
+        Estado = estado;
     }
     @Override
     public String toString(){
-        return "ID: " + id + "\nNombre: " + Nombre + "\nDescripcion: " + Descripcion + "\nCategoria: " + Categoria + "\nEstado de la Tarea: " + Completado;
+        return "ID: " + id + "\nNombre: " + Nombre + "\nDescripcion: " + Descripcion + "\nCategoria: " + Categoria + "\nEstado de la Tarea: " + Estado;
     }
     
     public int getId() {
@@ -51,12 +53,11 @@ public class Tarea{
         Categoria = categoria;
     }
 
-    public boolean isCompletado() {
-        return Completado;
+    public boolean isEstado() {
+        return Estado;
     }
-
-    public void setCompletado(boolean completado) {
-        Completado = completado;
+    public void setEstado(boolean estado) {
+        Estado = estado;
     }
 
     

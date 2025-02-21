@@ -1,10 +1,23 @@
+package Main;
 
+import java.sql.Connection;
 import java.util.ArrayList;
-
 import java.util.Scanner;
+import Controladores.ListadeCategorias;
+import Controladores.ListadeTarea;
+import modelos.Tarea;
+import database.ConexionSQL;
+
+
 
 public class MainListaTareas {
     public static void main(String[] args) {
+        Connection conn = ConexionSQL.conectar();
+        if (conn != null) {
+            System.out.println("Conexión exitosa a la base de datos.");
+        } else {
+            System.out.println("Error en la conexión.");
+        }
         Scanner sc = new Scanner(System.in);
         ArrayList<Tarea> lista = new ArrayList<>();
         ArrayList<Categoria> listaC= new ArrayList<>();
