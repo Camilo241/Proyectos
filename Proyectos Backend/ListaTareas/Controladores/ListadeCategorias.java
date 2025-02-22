@@ -1,53 +1,43 @@
 package Controladores;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
+
+import database.ConexionSQL;
 
 public class ListadeCategorias {
-    ArrayList<Categoria> listadeCategorias = new ArrayList<>();
-
-    public ListadeCategorias(ArrayList<Categoria> listadecategorias) {
-        listadeCategorias = listadecategorias;
-    }
-
-    int indice = 0;
-
-    public void CrearCategorias(Categoria categoria){
-        listadeCategorias.add(categoria);
-        System.out.println("La categoria se Agrego con exito.");
-    }
-
-    public void LeerCategorias(){
-        if (listadeCategorias.isEmpty()) {
-            System.out.println("La cadena esta Vacia.");
-        }else{
-            for (int i = 0; i < listadeCategorias.size(); i++) {
-                Categoria categoria = listadeCategorias.get(i);
-                System.out.println("El indice de la categoria es: " + (i+1) + "\nEl nombre de la categoria es: " + categoria.getNombre()  );
-            }
-        }
-    }
+    public static void insertarCategoria(String nombreCategoria) {
+        String sql = "INSERT INTO categorias (nombre) VALUES (?)"; //realizamos la consulta como si lo hcieramos en sql en donde definimos la tabla el valor que queremos ingresar
 
 
-    public void ActualizarCategoria(int idActualC,int indice,String nombre){
-        if (indice >= 0 && indice < listadeCategorias.size()) {
-            Categoria categoriaActualizada = new Categoria(idActualC,nombre);
-            listadeCategorias.set(indice,categoriaActualizada);
-            System.out.println("Categoria Actualizada con exito");
-        }else{
-            System.out.println("El indice que ingreso no existe.");
-        }
-    }
-
-    public void EliminarCategria(int indice){
-        for (int j = 0; j < listadeCategorias.size(); j++) {
-            if (indice == j) {
-                listadeCategorias.remove(indice);
-            }else{
-                System.out.println("El indice no fue encontrado");
-            }
+        try (Connection conn = ConexionSQL.conectar(); // validamos en la clase de conexion que me genere una buena conexion
+             PreparedStatement stmt = conn.prepareStatement(sql)) {// Crea un PreparedStatement que permite ejecutar la consulta SQL de manera eficiente.
             
+            stmt.setString(1, nombreCategoria);
+            stmt.executeUpdate();
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-        
-
     }
-    
+    public static List<String> obtenerCategorias() {
+        List<String> categorias = new ArrayList<>();
+        String sql = "SELECT nombre FROM categorias"; // realizamos la consulta como en SQl
+
+        try (Connection conn = ConexionSQL.conectar();
+             PreparedStatement stmt = conn.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) { // me guarda lo obtenido en la consulta en el calor ResultSet
+            
+            while (rs.next()) { //avanza al siguiente registro en el resultado de la consulta.
+                categorias.add(rs.getString("nombre"));
+            }
+        } catch (SQLException e) {//Si ocurre algún error en la conexión o consulta, se captura y se imprime en la consola.
+            e.printStackTrace();
+        }
+
+        return categorias;
+    }
 }
